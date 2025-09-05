@@ -1,0 +1,13 @@
+{
+  "ratings": {
+    "brilliant": 50,
+    "great": 30,
+    "best": 20,
+    "excellent": 10,
+    "good": 5,
+    "inaccuracy": -5,
+    "mistake": -10,
+    "blunder": -30,
+    "book": 1
+  }
+}

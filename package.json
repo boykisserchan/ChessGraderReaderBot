@@ -23,10 +23,15 @@
     "url": "https://github.com/slack-samples/bolt-js-starter-template/issues"
   },
   "dependencies": {
+    "@libsql/client": "^0.15.14",
     "@slack/bolt": "^4.4.0",
-    "dotenv": "~17.2.2"
+    "dotenv": "^17.2.2",
+    "drizzle-orm": "^0.44.5",
+    "logsnag": "^1.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.2.3"
+    "@biomejs/biome": "^2.2.3",
+    "drizzle-kit": "^0.31.4",
+    "tsx": "^4.20.5"
   }
 }

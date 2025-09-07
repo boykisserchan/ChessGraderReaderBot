@@ -1,37 +1,26 @@
 {
-  "name": "bolt-js-starter-template",
-  "version": "1.0.0",
-  "description": "A scaffold template for Slack apps",
-  "main": "app.js",
+  "name": "chessgraderreaderbot",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/node": "^24.3.1",
+    "drizzle-kit": "^0.31.4",
+    "tsx": "^4.20.5"
+  },
   "scripts": {
-    "start": "node app.js",
-    "lint": "npx @biomejs/biome check *.js listeners",
-    "lint:fix": "npx @biomejs/biome check --write *.js listeners"
+    "dev": "bun run --hot app.ts",
+    "build": "bun x tsc",
+    "start": "bun run dist/app.js"
   },
-  "author": "Slack Technologies, LLC",
-  "license": "MIT",
-  "keywords": [
-    "slack",
-    "bolt",
-    "slackapi"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/slack-samples/bolt-js-starter-template.git"
-  },
-  "bugs": {
-    "url": "https://github.com/slack-samples/bolt-js-starter-template/issues"
+  "peerDependencies": {
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "@libsql/client": "^0.15.14",
+    "@logsnag/node": "^1.0.1",
     "@slack/bolt": "^4.4.0",
     "dotenv": "^17.2.2",
-    "drizzle-orm": "^0.44.5",
-    "logsnag": "^1.0.0"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "^2.2.3",
-    "drizzle-kit": "^0.31.4",
-    "tsx": "^4.20.5"
+    "drizzle-orm": "^0.44.5"
   }
 }

@@ -1,8 +1,10 @@
 import type { App } from '@slack/bolt';
-import reactionAddedCallback from "./reactionAdded.ts";
+import { reactionAddedCallback } from "./reactionAdded.ts";
+import { reactionRemovedCallback } from "./reactionRemoved.ts";
 
-const register = (app: App) => {
-	app.event('reaction_added', reactionAddedCallback);
-};
-
-export default { register };
+export default {
+	register(app: App){
+		app.event('reaction_added', reactionAddedCallback);
+		app.event("reaction_removed", reactionRemovedCallback);
+	}
+}

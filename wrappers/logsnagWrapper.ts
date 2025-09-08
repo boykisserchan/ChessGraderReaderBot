@@ -1,4 +1,4 @@
-import { LogSnag } from "@logsnag/node";
+import {LogSnag} from "@logsnag/node";
 import secrets from "./secretWrapper.ts";
 
 const logsnag = new LogSnag({
@@ -6,7 +6,7 @@ const logsnag = new LogSnag({
 	project: secrets.logsnag_project_name,
 });
 
-export async function logReactionAdded(reaction: string, user: string, target: string, channelId: string, messageId: string) {
+export async function logReactionAdded(reaction: string, user: string, target: string, channelId: string, ts: string) {
 	return logsnag.track({
 		channel: "reaction_added",
 		event: `New ${reaction} added`,
@@ -16,11 +16,11 @@ export async function logReactionAdded(reaction: string, user: string, target: s
 			user: user,
 			target: target,
 			channel_id: channelId,
-			message_id: messageId,
+			ts: ts,
 		}
-	})
+	});
 }
-export async function logReactionRemoved(reaction: string, user: string, target: string, channelId: string, messageId: string) {
+export async function logReactionRemoved(reaction: string, user: string, target: string, channelId: string, ts: string) {
 	return logsnag.track({
 		channel: "reaction_removed",
 		event: `${reaction} removed`,
@@ -30,7 +30,7 @@ export async function logReactionRemoved(reaction: string, user: string, target:
 			user: user,
 			target: target,
 			channel_id: channelId,
-			message_id: messageId,
+			ts: ts,
 		}
-	})
+	});
 }

@@ -1,15 +1,16 @@
 import { App, LogLevel } from '@slack/bolt'
 import secrets from './wrappers/secretWrapper.ts'
+import registerListeners from "./listeners";
 
 /** Initialization */
 const app = new App({
 	token: secrets.slack_bot_token,
 	socketMode: true,
 	appToken: secrets.slack_app_token,
-	logLevel: LogLevel.DEBUG,
+	logLevel: LogLevel.INFO
 });
 
-
+registerListeners(app);
 
 (async () => {
 	try {

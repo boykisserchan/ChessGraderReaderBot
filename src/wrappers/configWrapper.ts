@@ -1,0 +1,1 @@
+export { default } from '../../conf.json' with { type : 'json' };

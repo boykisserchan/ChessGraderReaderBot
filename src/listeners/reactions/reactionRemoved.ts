@@ -8,8 +8,6 @@ export async function reactionRemovedCallback({
                                             }: AllMiddlewareArgs & SlackEventMiddlewareArgs<'reaction_removed'>) {
 	try {
 		logger.info('Reaction removed event received:', event.reaction);
-
-		await logReactionRemoved(event.reaction, event.user, event.item_user, event.item.channel, event.item.ts)
 	} catch (error) {
 		logger.error('Error handling reaction_removed event:', error);
 	}
